@@ -1,0 +1,20 @@
+package com.CollegeService.ServiceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.CollegeService.Entity.College;
+import com.CollegeService.Repository.CollegeRepository;
+import com.CollegeService.ServiceInterface.CollegeServiceInterface;
+
+public class CollegeServiceImpl implements CollegeServiceInterface{
+	@Autowired
+	private CollegeRepository collegerepo;
+
+	@Override
+	public List<College> getAllCollege() {
+		return collegerepo.findAll();
+	}
+
+}

@@ -1,0 +1,49 @@
+package com.CollegeService.VO;
+
+
+
+public class Student {
+	
+	
+	private String Sname;
+	
+	private int age;
+	
+	private String gender;
+	private String Sstream;
+	public String getSname() {
+		return Sname;
+	}
+	public void setSname(String sname) {
+		Sname = sname;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getSstream() {
+		return Sstream;
+	}
+	public void setSstream(String sstream) {
+		Sstream = sstream;
+	}
+	public Student(String sname, int age, String gender, String sstream) {
+		super();
+		Sname = sname;
+		this.age = age;
+		this.gender = gender;
+		Sstream = sstream;
+	}
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+}

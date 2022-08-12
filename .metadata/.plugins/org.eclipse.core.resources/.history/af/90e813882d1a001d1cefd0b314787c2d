@@ -1,0 +1,5 @@
+package com.CollegeService.VO;
+
+public class Student {
+
+}

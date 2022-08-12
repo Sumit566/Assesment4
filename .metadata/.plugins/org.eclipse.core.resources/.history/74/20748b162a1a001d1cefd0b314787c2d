@@ -1,0 +1,5 @@
+package com.StudentService.StudentServiceInterface;
+
+public interface StudentInterface {
+
+}

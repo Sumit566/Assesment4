@@ -1,0 +1,21 @@
+package com.StudentService.StudentServiceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.StudentService.Respository.StudentRepository;
+import com.StudentService.StudentServiceInterface.StudentInterface;
+import com.StudentService.entity.Student;
+@Service
+public class StudentServiceImpl implements StudentInterface{
+	@Autowired
+	private StudentRepository studentrepo;
+
+	@Override
+	public List<Student> getAllStudents() {
+		return studentrepo.findAll();
+	}
+
+}

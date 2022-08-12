@@ -1,0 +1,48 @@
+package com.StudentService.StudentServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.StudentService.Respository.StudentRepository;
+import com.StudentService.StudentServiceInterface.StudentInterface;
+import com.StudentService.VO.College;
+import com.StudentService.entity.Student;
+@Service
+public class StudentServiceImpl implements StudentInterface{
+	@Autowired
+	private StudentRepository studentrepo;
+	
+	@Autowired
+	private RestTemplate resttemplate;
+
+	@Override
+	public List<Student> getAllStudents() {
+		return studentrepo.findAll();
+	}
+
+	@Override
+	public Student AddStudent(Student stu) {
+		ResponseEntity<College[]> c=resttemplate.getForEntity("http://College-Service/College",College[].class);
+		College[] e=c.getBody();
+		return studentrepo.save(stu);
+	}
+
+	@Override
+	public List<Student> getStudent(String Cname) {
+		List<Student> st=new ArrayList<>();
+		st=studentrepo.findAll();
+		List<Student> s=new ArrayList<>();
+		for(Student i:s) {
+			if(i.getCName()==Cname) {
+				st.add(i);
+			}
+		}
+		return st;
+	}
+
+}

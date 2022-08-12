@@ -1,0 +1,13 @@
+package com.EurekServer;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EurekServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EurekServerApplication.class, args);
+	}
+
+}

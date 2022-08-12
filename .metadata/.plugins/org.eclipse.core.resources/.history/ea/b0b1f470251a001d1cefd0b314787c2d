@@ -1,0 +1,5 @@
+package com.CollegeService.Repository;
+
+public interface CollegeRepository {
+
+}
